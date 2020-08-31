@@ -2,8 +2,8 @@
 - name: GATHER FACTS
   hosts: test
   gather_facts: no
-  vars_files:
-    - "/etc/ansible/group_vars/ios.yml"
+#  vars_files:
+#    - "/etc/ansible/group_vars/ios.yml"
   any_errors_fatal: True
 
 
