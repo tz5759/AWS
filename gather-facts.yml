@@ -1,0 +1,22 @@
+---
+- name: GATHER FACTS
+  hosts: C3850
+  gather_facts: no
+  vars_files:
+    - "/etc/ansible/group_vars/ios.yml"
+  any_errors_fatal: True
+
+
+  tasks:
+    - name: SHOW RUN ON DEVICE
+      ios_command:
+        commands:
+          - show run
+      register: config
+
+#    - name: GET CURRENT CONFIGURED NTP SERVERS
+#      set_fact: _servers="{{ config.stdout[0] | regex_findall('^ntp server (\S+)', multiline=True) }}"
+
+      register: print_output
+
+    - debug: var=print_output.stdout_lines
