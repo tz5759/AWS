@@ -1,6 +1,6 @@
 ---
 - name: GATHER FACTS
-  hosts: C3850
+  hosts: test
   gather_facts: no
   vars_files:
     - "/etc/ansible/group_vars/ios.yml"
